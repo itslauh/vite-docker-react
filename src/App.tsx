@@ -1,33 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
+import { Button, ButtonGroup, Code, Flex, Text, Title } from '@mantine/core';
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Flex
+        gap="md"
+        justify="center"
+        align="center"
+        direction="column"
+        wrap="wrap"
+      >
+        <Title >Vite + React</Title>
+        <ButtonGroup>
+        <Button onClick={() => setCount((count) => count - 1)}>
+          -
+        </Button>
+        <Button onClick={() => setCount(0)} variant={"light"}>{count}</Button>
+        <Button onClick={() => setCount((count) => count + 1)}>
+          +
+        </Button>
+        </ButtonGroup>
+        <Text>
+          Edit <Code>src/App.tsx</Code> and save to test HMR
+        </Text>
+      </Flex>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
